@@ -1,0 +1,117 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "test",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PrezzoIntent",
+                    "slots": [
+                        {
+                            "name": "tipo_moneta",
+                            "type": "monetaType"
+                        },
+                        {
+                            "name": "day",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "{day} quanto costava il {tipo_moneta}",
+                        "quale il {tipo_moneta} {day}",
+                        "quanto costa il {tipo_moneta}",
+                        "qual'e il prezzo di {tipo_moneta}"
+                    ]
+                },
+                {
+                    "name": "DimmiqualcosaIntent",
+                    "slots": [
+                        {
+                            "name": "persona",
+                            "type": "personaType"
+                        }
+                    ],
+                    "samples": [
+                        "parlami su {persona}",
+                        "cosa pensi su {persona}",
+                        "dimmi qualcosa su di {persona}"
+                    ]
+                },
+                {
+                    "name": "CitazioneIntent",
+                    "slots": [],
+                    "samples": [
+                        "bella frase",
+                        "dimmi una bella frase"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "monetaType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "ethereum",
+                                "synonyms": [
+                                    "ethereum",
+                                    "etherium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bitcoint",
+                                "synonyms": [
+                                    "biticoin",
+                                    "coin",
+                                    "bitcoin"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "personaType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "gianluigi",
+                                "synonyms": [
+                                    "luigi",
+                                    "gian"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rodrigo",
+                                "synonyms": [
+                                    "digu",
+                                    "digo",
+                                    "rodrigo",
+                                    "rod"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

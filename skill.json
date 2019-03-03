@@ -1,0 +1,29 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "it-IT": {
+          "summary": "Crypto prices",
+          "examplePhrases": [
+            "Alexa abre prezzo del bitcoins"
+          ],
+          "name": "costo bitcoint",
+          "description": "quanto costa il bitcoint"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/py/lambda_upload",
+          "uri": "ask-custom-crypto-classes-default"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}
