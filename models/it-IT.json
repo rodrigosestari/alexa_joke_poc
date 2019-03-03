@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "test",
+            "invocationName": "applicazione di rodrigo",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -58,6 +58,15 @@
                     "samples": [
                         "bella frase",
                         "dimmi una bella frase"
+                    ]
+                },
+                {
+                    "name": "CiaoIntent",
+                    "slots": [],
+                    "samples": [
+                        "chiami alexa",
+                        "ciao ciao",
+                        "ciao"
                     ]
                 }
             ],

@@ -39,11 +39,28 @@ class CitazioneIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
 
-        speech_text = "Marco entra in una città; vede qualcuno in una piazza vivere una vita o un istante che " \
+        speech_text = "Marco entra in una città, vede qualcuno in una piazza vivere una vita o un istante che " \
                       "potevano essere suoi. Al posto di quell’uomo ora avrebbe potuto esserci lui se si fosse " \
-                      "fermato nel tempo tanto tempo prima, oppure se tanto tempo prima a un crocevia invece " \
-                      "di prendere una strada avesse preso quella opposta e dopo un lungo giro fosse venuto a " \
+                      "fermato nel tempo tanto tempo prima, oppure se tanto tempo prima ad un crocevia, invece " \
+                      "di prendere una strada avesse preso quella opposta, e dopo un lungo giro fosse venuto a " \
                       "trovarsi al posto di quell’uomo in quella piazza."
+
+        logger.info(speech_text)
+        handler_input.response_builder.speak(speech_text).set_card(
+            SimpleCard("crypto", speech_text)).set_should_end_session(False)
+        return handler_input.response_builder.response
+
+
+class CiaoIntentHandler(AbstractRequestHandler):
+
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("CiaoIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+
+        speech_text = "ciao ragazzi è stato piacere parlare con vuoi. Alla prossima!"
 
         logger.info(speech_text)
         handler_input.response_builder.speak(speech_text).set_card(
@@ -71,11 +88,11 @@ class DimmiqualcosaIntentHandler(AbstractRequestHandler):
             if persona == "rodrigo":
                 speech_text = "cosa posso dire di Rodrigo il Mago, lui me ha creato!"
             if persona == "gianluigi":
-                speech_text = "hahaha, grande Gianluigi lui è il re dei bitcoins!"
+                speech_text = "ha ha ha, grande Gianluigi, devo chiedere a lui dei consigli riguardo blockchain!"
 
         logger.info(speech_text)
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("crypto", speech_text)).set_should_end_session(True)
+            SimpleCard("crypto", speech_text)).set_should_end_session(False)
         return handler_input.response_builder.response
 
 
@@ -107,7 +124,7 @@ class PrezzoIntentHandler(AbstractRequestHandler):
 
         logger.info(speech_text)
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("crypto", speech_text)).set_should_end_session(True)
+            SimpleCard("crypto", speech_text)).set_should_end_session(False)
         return handler_input.response_builder.response
 
 
@@ -199,6 +216,8 @@ sb.add_request_handler(NavigateHomeIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 sb.add_request_handler(DimmiqualcosaIntentHandler())
 sb.add_request_handler(CitazioneIntentHandler())
+sb.add_request_handler(CiaoIntentHandler())
+
 
 sb.add_exception_handler(CatchAllExceptionHandler())
 
