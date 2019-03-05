@@ -1,4 +1,4 @@
-#!/bin/bash
+ale #!/bin/bash
 # Shell script for ask-cli post-new hook for Python
 # Script Usage: post_new_hook.sh <SKILL_NAME> <DO_DEBUG>
  
